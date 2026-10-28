@@ -21,3 +21,8 @@ app.use("/api/v1/users",userRouter)
 
 import ridesRouter from "./routes/rides.routes.js";
 app.use("/api/v1/rides", ridesRouter);
+
+import  errorHandler from "./middlewares/error.middleware.js";
+app.use(errorHandler);
+
+export default app;

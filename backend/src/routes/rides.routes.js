@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {publishRide,bookRide,approveRideBooking,getMyRides} from "../controllers/rides.controller.js";
+import {publishRide,bookRide,approveRideBooking,getMyRides,getRidePeople} from "../controllers/rides.controller.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 const router = Router();
