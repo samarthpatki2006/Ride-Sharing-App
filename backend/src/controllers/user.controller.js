@@ -63,13 +63,18 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 
   let data;
-
-  if (phone) {
+  if(email && phone){
+    [data] = await db.execute(
+      "select id,email,phone,name,password_hash from users where phone=? and email=?",
+      [phone,email]
+    );
+  }
+  else if (phone) {
     [data] = await db.execute(
       "select id,email,phone,name,password_hash from users where phone=?",
       [phone]
     );
-  } else {
+  } else if(email) {
     [data] = await db.execute(
       "select id,email,phone,name,password_hash from users where email=?",
       [email]
@@ -82,8 +87,8 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 
   const isPasswordValid = isPasswordCorrect(
-    password,
-    data[0].password_hash
+    data[0].password_hash,
+    password
   );
 
   if (!isPasswordValid) {
