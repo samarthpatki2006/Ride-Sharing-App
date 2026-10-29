@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login · Ride Together</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="login">
+  <header id="navbar"></header>
+  <div id="global-message" class="message" role="status" hidden></div>
+
+  <main class="auth-wrapper">
+    <section class="panel">
+      <p class="eyebrow">WELCOME BACK</p>
+      <h1>Your next journey awaits.</h1>
+      <p class="muted">Log in to find and manage your rides.</p>
+
+      <div id="message" class="message" role="status" hidden></div>
+
+      <form id="login-form" class="form">
+        <label>
+          Email address
+          <input
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            required
+          >
+        </label>
+
+        <label>
+          Password
+          <input
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Your password"
+            required
+          >
+        </label>
+
+        <button class="button full" type="submit">Log in</button>
+      </form>
+
+      <p class="auth-switch">
+        New here? <a href="./register.html">Create an account</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>Ride Together · Share the journey.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="../js/login.js"></script>
+</body>
+</html>

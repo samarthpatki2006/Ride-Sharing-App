@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publish a ride · Ride Together</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="publish">
+  <header id="navbar"></header>
+  <div id="global-message" class="message" role="status" hidden></div>
+
+  <main id="protected-content" class="container page" hidden>
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">MAKE ROOM FOR COMPANY</p>
+        <h1>Publish a ride.</h1>
+        <p>Share your route and let others request a seat.</p>
+      </div>
+    </div>
+
+    <div class="publish-layout">
+      <section class="panel">
+        <div id="message" class="message" role="status" hidden></div>
+
+        <form id="publish-form" class="form">
+          <label>
+            Ride type
+            <select name="ride_type" required>
+              <option value="self_driven">Self driven</option>
+              <option value="cab_share">Cab share</option>
+            </select>
+          </label>
+
+          <div class="form-row">
+            <label>
+              Source
+              <input name="source" placeholder="Leaving from" required>
+            </label>
+
+            <label>
+              Destination
+              <input name="destination" placeholder="Going to" required>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Departure date and time
+              <input name="departure_time" type="datetime-local" required>
+            </label>
+
+            <label>
+              Seats available for passengers
+              <input
+                name="total_seats"
+                type="number"
+                min="1"
+                max="255"
+                step="1"
+                value="1"
+                required
+              >
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Estimated total cost (₹)
+              <input
+                name="estimated_total_cost"
+                type="number"
+                min="0"
+                step="0.01"
+                placeholder="Optional"
+              >
+            </label>
+
+            <label>
+              Cost per person (₹)
+              <input
+                name="cost_per_person"
+                type="number"
+                min="0"
+                step="0.01"
+                placeholder="Optional"
+              >
+            </label>
+          </div>
+
+          <label>
+            Notes
+            <textarea
+              name="notes"
+              rows="4"
+              placeholder="Pickup point, luggage space, or other details"
+            ></textarea>
+          </label>
+
+          <button type="submit" class="button">Publish ride ↗</button>
+        </form>
+      </section>
+
+      <aside class="side-note">
+        <h2>You're in control.</h2>
+
+        <p>Passengers send requests. You choose who joins your ride.</p>
+
+        <ul>
+          <li>Seats are reserved only after your approval.</li>
+          <li>Review requests from the My rides page.</li>
+          <li>Approved passengers can see their travel group.</li>
+        </ul>
+
+        <p>
+          Costs are informational. Agree on payment with your passengers.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>Ride Together · Share the journey.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="../js/publish.js"></script>
+</body>
+</html>

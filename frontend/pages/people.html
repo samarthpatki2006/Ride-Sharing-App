@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ride participants · Ride Together</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="people">
+  <header id="navbar"></header>
+  <div id="global-message" class="message" role="status" hidden></div>
+
+  <main id="protected-content" class="container page" hidden>
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">YOUR TRAVEL GROUP</p>
+        <h1>People in this ride.</h1>
+        <p>View participants and manage requests.</p>
+      </div>
+
+      <div class="actions">
+        <a href="./my-rides.html" class="button secondary">← My rides</a>
+        <button id="refresh-people" class="button secondary">Refresh</button>
+      </div>
+    </div>
+
+    <div id="message" class="message" role="status" hidden></div>
+    <div id="ride-details"></div>
+
+    <section id="pending-section" hidden>
+      <h2 class="section-title">Pending requests</h2>
+      <div id="pending-list" class="people-grid"></div>
+    </section>
+
+    <section id="participants-section" hidden>
+      <h2 class="section-title">Publisher and approved passengers</h2>
+      <div id="people-list" class="people-grid"></div>
+    </section>
+  </main>
+
+  <footer>Ride Together · Share the journey.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="../js/people.js"></script>
+</body>
+</html>

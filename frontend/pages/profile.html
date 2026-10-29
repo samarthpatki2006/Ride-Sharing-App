@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile · Ride Together</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="profile">
+  <header id="navbar"></header>
+  <div id="global-message" class="message" role="status" hidden></div>
+
+  <main id="protected-content" class="container page" hidden>
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">YOUR ACCOUNT</p>
+        <h1>My profile.</h1>
+        <p>Your details, all in one place.</p>
+      </div>
+
+      <a href="./my-rides.html" class="button secondary">My rides ↗</a>
+    </div>
+
+    <div class="profile-layout">
+      <section class="panel profile-summary">
+        <div id="profile-avatar" class="avatar"></div>
+        <h2 id="profile-name"></h2>
+        <p class="muted">Ride Together member</p>
+
+        <a href="./rides.html" class="button">Find a ride</a>
+      </section>
+
+      <section class="panel">
+        <h2>Account details</h2>
+
+        <dl class="details">
+          <div>
+            <dt>Full name</dt>
+            <dd id="detail-name"></dd>
+          </div>
+
+          <div>
+            <dt>Email address</dt>
+            <dd id="detail-email"></dd>
+          </div>
+
+          <div>
+            <dt>Phone number</dt>
+            <dd id="detail-phone"></dd>
+          </div>
+
+          <div>
+            <dt>Member since</dt>
+            <dd id="detail-created"></dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+  </main>
+
+  <footer>Ride Together · Share the journey.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="../js/profile.js"></script>
+</body>
+</html>

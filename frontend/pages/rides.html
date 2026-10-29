@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find a ride · Ride Together</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="rides">
+  <header id="navbar"></header>
+  <div id="global-message" class="message" role="status" hidden></div>
+
+  <main id="protected-content" class="container page" hidden>
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">YOUR NEXT JOURNEY</p>
+        <h1>Find your ride.</h1>
+        <p>Browse open rides and request your seat.</p>
+      </div>
+
+      <a href="./publish.html" class="button secondary">
+        + Publish a ride
+      </a>
+    </div>
+
+    <form id="search-form" class="search-form">
+      <label>
+        Leaving from
+        <input name="source" placeholder="e.g. Manipal">
+      </label>
+
+      <label>
+        Going to
+        <input name="destination" placeholder="e.g. Mangalore">
+      </label>
+
+      <button class="button" type="submit">Search</button>
+      <button class="button secondary" type="reset">Clear</button>
+    </form>
+
+    <div class="page-heading">
+      <h2>Available rides <span id="ride-count"></span></h2>
+      <button id="refresh-rides" class="button secondary small">
+        Refresh
+      </button>
+    </div>
+
+    <div id="message" class="message" role="status" hidden></div>
+
+    <div id="rides-list" class="ride-grid" aria-live="polite"></div>
+  </main>
+
+  <footer>Ride Together · Share the journey.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="../js/rides.js"></script>
+</body>
+</html>

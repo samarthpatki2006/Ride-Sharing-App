@@ -236,5 +236,36 @@ const getRidePeople = asyncHandler(async (req, res) => {
     pendingRequests: isPublisher ? passengers.filter(person => person.booking_status === 'pending') : [],
   }, "Ride participants fetched successfully"));
 });
+const getAvailableRides = asyncHandler(async (req, res) => {
+  const user = Array.isArray(req.user) ? req.user[0] : req.user;
 
-export { publishRide, bookRide, approveRideBooking, getMyRides, getRidePeople };
+  if (!user?.id) {
+    throw new ApiError(401, "Please log in first");
+  }
+
+  const [rides] = await db.execute(
+    `SELECT
+       t.*,
+       u.name AS publisher_name
+     FROM trips t
+     JOIN users u ON u.id = t.publisher_id
+     WHERE t.status = 'open'
+       AND t.available_seats > 0
+       AND t.departure_time > NOW()
+       AND t.publisher_id != ?
+       AND NOT EXISTS (
+         SELECT 1
+         FROM trip_bookings b
+         WHERE b.trip_id = t.id
+           AND b.passenger_id = ?
+           AND b.status IN ('pending', 'approved')
+       )
+     ORDER BY t.departure_time ASC`,
+    [user.id, user.id]
+  );
+
+  return res.status(200).json(
+    new ApiResponse(200, rides, "Available rides fetched successfully")
+  );
+});
+export { publishRide, bookRide, approveRideBooking, getMyRides, getRidePeople,getAvailableRides };

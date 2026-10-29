@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register · Ride Together</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="register">
+  <header id="navbar"></header>
+  <div id="global-message" class="message" role="status" hidden></div>
+
+  <main class="auth-wrapper">
+    <section class="panel">
+      <p class="eyebrow">LET'S GET YOU ON THE ROAD</p>
+      <h1>Create an account</h1>
+      <p class="muted">Your next shared journey starts here.</p>
+
+      <div id="message" class="message" role="status" hidden></div>
+
+      <form id="register-form" class="form">
+        <label>
+          Full name
+          <input
+            name="name"
+            type="text"
+            autocomplete="name"
+            placeholder="Your full name"
+            required
+          >
+        </label>
+
+        <label>
+          Email address
+          <input
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            required
+          >
+        </label>
+
+        <label>
+          Phone number
+          <input
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            placeholder="Your phone number"
+            required
+          >
+        </label>
+
+        <label>
+          Password
+          <input
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            placeholder="Create a password"
+            required
+          >
+        </label>
+
+        <label>
+          Confirm password
+          <input
+            name="confirmPassword"
+            type="password"
+            autocomplete="new-password"
+            placeholder="Enter your password again"
+            required
+          >
+        </label>
+
+        <button class="button full" type="submit">Create account</button>
+      </form>
+
+      <p class="auth-switch">
+        Already registered? <a href="./login.html">Log in</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>Ride Together · Share the journey.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="../js/register.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 const app=express();
 
 app.use(cors({
-  origin:process.env.CORS_ORIGIN,
+  origin:"http://127.0.0.1:5500",
   credentials:true
 }))
 

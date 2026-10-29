@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ride Together</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body data-page="landing">
+  <header id="navbar"></header>
+  <div id="global-message" class="message" role="status" hidden></div>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">GOOD COMPANY. BETTER JOURNEYS.</p>
+        <h1>Going somewhere?<br>Go <span>together.</span></h1>
+
+        <p class="hero-description">
+          Find a ride, offer a seat, and share the journey.
+          From airport trips to everyday travel, a little company
+          makes the road better.
+        </p>
+
+        <div class="actions">
+          <a href="./pages/rides.html" class="button">Find a ride ↗</a>
+          <a href="./pages/publish.html" class="button secondary">
+            Publish a ride
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="A shared journey">
+        <p class="eyebrow">YOUR NEXT JOURNEY</p>
+
+        <div class="journey-point">
+          <small>LEAVING FROM</small>
+          <strong>Somewhere familiar</strong>
+        </div>
+
+        <div class="journey-line"></div>
+
+        <div class="journey-point">
+          <small>HEADING TO</small>
+          <strong>Somewhere new ↗</strong>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="eyebrow">SIMPLE FROM START TO FINISH</p>
+      <h2>Three steps to a shared ride.</h2>
+
+      <div class="steps">
+        <article class="panel">
+          <span class="step-number">01 /</span>
+          <h3>Find your route</h3>
+          <p class="muted">
+            Browse upcoming rides with available seats.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="step-number">02 /</span>
+          <h3>Request a seat</h3>
+          <p class="muted">
+            Choose your seats and send a request to the publisher.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="step-number">03 /</span>
+          <h3>Travel together</h3>
+          <p class="muted">
+            Once approved, see your travel group and arrange the details.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Have a spare seat?</h2>
+        <p>Someone might be going your way.</p>
+      </div>
+
+      <a href="./pages/publish.html" class="button light">
+        Publish a ride ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>Ride Together · A little less solo. A little more together.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="../js/login.js"></script>
+</body>
+</html>

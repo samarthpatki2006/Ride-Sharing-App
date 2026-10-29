@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My rides · Ride Together</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-page="my-rides">
+  <header id="navbar"></header>
+  <div id="global-message" class="message" role="status" hidden></div>
+
+  <main id="protected-content" class="container page" hidden>
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">YOUR JOURNEYS</p>
+        <h1>My rides.</h1>
+        <p>Manage published rides and track your booking requests.</p>
+      </div>
+
+      <div class="actions">
+        <button id="refresh-my-rides" class="button secondary">
+          Refresh
+        </button>
+
+        <a href="./publish.html" class="button">+ Publish a ride</a>
+      </div>
+    </div>
+
+    <div id="message" class="message" role="status" hidden></div>
+
+    <h2 class="section-title">Rides I published</h2>
+    <div id="published-list" class="ride-grid" aria-live="polite"></div>
+
+    <h2 class="section-title">My bookings</h2>
+    <div id="bookings-list" class="ride-grid" aria-live="polite"></div>
+  </main>
+
+  <footer>Ride Together · Share the journey.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="../js/my-rides.js"></script>
+</body>
+</html>
