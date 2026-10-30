@@ -15,5 +15,5 @@ if (user) {
   $("detail-name").textContent = user.name || "Not provided";
   $("detail-email").textContent = user.email || "Not provided";
   $("detail-phone").textContent = user.phone || "Not provided";
-  $("detail-created").textContent = formatDate(user.created_at);
+  // $("detail-created").textContent = formatDate(user.created_at);
 }
